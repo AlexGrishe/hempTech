@@ -1,0 +1,31 @@
+<div class="container">
+
+  <h3>Избраное</h3>
+
+  <div class="wrapper">
+
+
+    <div class="cart-products">
+
+      <div class="cart-item" *ngFor="let item of itemsFv; let i = index">
+        <img class=".cart-item__title_img" src="{{ item.img }}" alt="Head foto cart">
+        <div class="cart-item_about-product">
+          <span class="cart-item_about-product__product-name">{{ item.name }}</span>
+          <span class="cart-item_about-product__product-costPrice">{{ item.costPrice | currency }}</span>
+        </div>
+        <button class="btn" (click)="addToCart(item)"><img
+          style="max-width: 40px; max-height: 40px;"
+          src="assets/photo/add-cart.png" alt="cart"></button>
+        <button class="btn" (click)="removeItem(item)"><img src="/assets/photo/delete.png" alt="Delete"></button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="btn-wrapper">
+    <button class="btn-link" (click)="clearFavorite()">Очистить</button>
+  </div>
+
+</div>
+

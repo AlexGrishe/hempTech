@@ -1,0 +1,57 @@
+<h1 mat-dialog-title>Hi </h1>
+<div mat-dialog-content>
+  <p>Введите один из вариантов</p>
+<!--  <mat-form-field>-->
+<!--    <mat-label>Ваше имя</mat-label>-->
+<!--    <input matInput [(ngModel)]="data.name">-->
+<!--    <mat-label>Email</mat-label>-->
+<!--    <input matInput [(ngModel)]="data.email">-->
+<!--    <mat-label>Телеграм(@.......)</mat-label>-->
+<!--    <input matInput [(ngModel)]="data.tg">-->
+
+  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+    <div class="cart-form_input-item">
+      <label for="name">
+        Имя:
+      </label>
+      <input id="name" type="text" formControlName="name">
+    </div>
+
+    <div class="cart-form_input-item">
+      <label for="email">
+        Емейл:
+      </label>
+      <input id="email" type="email" formControlName="email">
+    </div>
+
+    <div class="cart-form_input-item">
+      <label for="tel">
+        Мобильный:
+      </label>
+      <input id="tel" type="tel" formControlName="tel">
+    </div>
+    <button class="check-out-payment btn-primary">Оформить</button>
+
+  </form>
+
+  <div class="cart-products">
+
+    <div class="cart-item" *ngFor="let item of items; let i = index">
+<!--     <div  class="cart-item" *ngIf="item.preOrder == true">-->
+       <img class=".cart-item__title_img" src="{{ item.img }}" alt="Head foto cart">
+       <div class="cart-item_about-product">
+         <span class="cart-item_about-product__product-name">{{ item.name }}</span>
+         <span class="cart-item_about-product__product-costPrice">{{ item.costPrice | currency }}</span>
+       </div>
+<!--     </div>-->
+<!--      <button class="btn" (click)="removeItem(item)"><img src="/assets/photo/delete.png" alt="Delete"></button>-->
+    </div>
+
+  </div>
+
+<!--  </mat-form-field>-->
+</div>
+<div mat-dialog-actions>
+<!--  <button mat-button (click)="onNoClick()">Отмена</button>-->
+<!--  <button [mat-dialog-close]="data.name || data.email || data.tg" cdkFocusInitial mat-button>Ok</button>-->
+</div>

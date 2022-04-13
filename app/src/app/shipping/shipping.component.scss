@@ -1,0 +1,46 @@
+div {
+  color: #FFFFFF;
+}
+
+h3 {
+  color: white;
+}
+
+.title_sdek {
+  background: url(../../assets/photo/sdec_ship2.jpeg) 100% 2%;
+  height: 107px;
+  margin: 0;
+}
+
+.title_rp {
+  background: url(../../assets/photo/rp_ship.jpg) 0 17%;
+  height: 183px;
+  margin: 0;
+  background-size: cover;
+}
+
+.mat-table {
+  background: rgba(255, 184, 38, 0.5);
+  width: 100%;
+}
+
+th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  width: 100px;
+  padding: 10px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
+    padding-left: 2px;
+  }
+  th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    width: 100px;
+    padding: 3px;
+    font-size: 8px;
+  }
+
+}

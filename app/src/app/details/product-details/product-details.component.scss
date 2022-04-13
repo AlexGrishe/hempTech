@@ -1,0 +1,348 @@
+.container {
+  color: white;
+}
+
+.about-product {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.about-product__right-side {
+  background-color: rgba(51, 170, 51, .7);
+  margin: 45px 0 30px 30px;
+  border-radius: 30px;
+  padding: 30px;
+}
+
+.about-product__right-side___btn {
+  background-color: yellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  border-radius: 20px;
+}
+.about-product_warrant-text {
+  font-size: 20px;
+}
+
+.about-product__carousel {
+  border: 5px solid white;
+  border-radius: 20px;
+  width: 100%;
+  height: 400px;
+  display: block;
+  //position: relative;
+}
+
+.picsum-img-wrapper {
+  //height: 390px;
+}
+
+.picsum-img-wrapper > img {
+  width: 100%;
+  object-fit: cover;
+  max-height: fit-content;
+  height: inherit;
+}
+
+.about-product__left-side {
+  margin-top: 10px;
+}
+
+.about-product__left-side___links {
+  margin-left: 16px;
+}
+
+.carousel-item:active {
+  border-radius: 20px;
+}
+
+.about-product__left-side___links > a {
+  color: #e0dfdf;
+  font-size: 18px;
+  padding-right: 15px;
+}
+
+
+.about-product__left-side___links > a:hover {
+  color: #FFFFFF;
+  font-size: 20px;
+}
+
+.product-details_title-block {
+  background: #000000;
+  text-align: center;
+  margin: 0;
+}
+
+.product-details_title-block > h1 {
+  padding: 25px;
+  font-size: 32px;
+  text-decoration: underline;
+  margin: 0;
+}
+
+.about-product__payment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 24px;
+}
+
+.about-product__payment__img {
+  margin: 8px;
+}
+
+.about-product__characteristics-block {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin-top: 20px;
+  color: black;
+  padding: 16px;
+  border-radius: 20px;
+}
+
+
+.about-product__characteristics-block > h3 {
+  font-size: 28px;
+  margin-left: 16px;
+}
+
+.about-product__characteristics-block > p {
+  font-size: 18px;
+}
+
+.about-product__characteristics-block > p > span {
+  font-size: 18px;
+  text-decoration: underline;
+}
+
+.about-product__characteristics-block___description {
+  font-size: 22px;
+  background-color: goldenrod;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.about-product__descriptionAll-block {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin-top: 20px;
+  color: black;
+  padding: 16px;
+  border-radius: 20px;
+}
+
+
+.about-product__descriptionAll-block > h3 {
+  font-size: 28px;
+  margin-left: 16px;
+}
+
+.about-product__descriptionAll-block > p {
+  font-size: 18px;
+}
+
+.about-product__descriptionAll-block > p > span {
+  font-size: 18px;
+  text-decoration: underline;
+}
+
+.about-product__descriptionAll___description {
+  font-size: 22px;
+  background-color: goldenrod;
+  border-radius: 10px;
+  padding: 5px;
+}
+.moreReviewsLink {
+  text-align: center;
+}
+
+.moreReviewsLink > a {
+  color: #ffffff;
+
+}
+
+.about-product__reviews-block {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin-top: 20px;
+  color: black;
+  padding: 16px;
+  border-radius: 20px;
+}
+
+.about-product__reviews-block___title {
+  font-size: 28px;
+  padding: 10px;
+}
+
+.about-product__reviews-block > a {
+  padding: 15px;
+  font-size: 12px;
+}
+
+.about-product__reviews-block___img-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 250px);
+  grid-column-gap: 30px;
+  padding: 16px;
+}
+
+
+.about-product__reviews-block___img-wrapper > img {
+  width: 250px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+}
+
+.btn-wrapper {
+  position: absolute!important;
+  right: 10px!important;
+}
+
+.carousel-control-prev, .carousel-control-next {
+  position: absolute;
+  top: 40px!important;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15%;
+  color: #fff;
+  text-align: center;
+  opacity: 0.5;
+  transition: opacity 0.15s ease;
+}
+@media only screen and (min-width : 320px) and (max-width : 479px) {
+  .about-product__reviews-block___img-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .about-product {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .about-product__right-side {
+    margin: 0;
+  }
+  .about-product__reviews-block___img-wrapper > img {
+    width: 215px;
+    height: 270px;
+    object-fit: cover;
+    margin: 10px 15%;
+  }
+  .about-product__characteristics-block___dopDescr___images > img,
+  .about-product__characteristics-block___dopDescr___images2 > img,
+  .about-product__characteristics-block___dopDescr___images3 > img,
+  .about-product__characteristics-block___dopDescr___images4 > img,
+  .about-product__characteristics-block___dopDescr___images5 > img {
+    width: 270px;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 503px) {
+  .about-product__reviews-block___img-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .about-product {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .about-product__right-side {
+    margin: 0;
+  }
+  .about-product__reviews-block___img-wrapper > img {
+    width: 215px;
+    height: 270px;
+    object-fit: cover;
+    margin: 10px 25%;
+  }
+  .about-product__characteristics-block___dopDescr___images > img,
+  .about-product__characteristics-block___dopDescr___images2 > img,
+  .about-product__characteristics-block___dopDescr___images3 > img,
+  .about-product__characteristics-block___dopDescr___images4 > img,
+  .about-product__characteristics-block___dopDescr___images5 > img {
+    width: 400px;
+  }
+}
+@media only screen and (min-width: 504px) and (max-width: 767px) {
+  .about-product__reviews-block___img-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .about-product {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .about-product__right-side {
+    margin: 30px 30px 30px;
+  }
+  .about-product__reviews-block___img-wrapper > img {
+    width: 215px;
+    height: 270px;
+    object-fit: cover;
+  }
+
+  .about-product__characteristics-block___dopDescr___images > img,
+  .about-product__characteristics-block___dopDescr___images2 > img,
+  .about-product__characteristics-block___dopDescr___images3 > img,
+  .about-product__characteristics-block___dopDescr___images4 > img,
+  .about-product__characteristics-block___dopDescr___images5 > img {
+    width: 450px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .about-product__reviews-block___img-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .about-product__characteristics-block___dopDescr___images > img,
+  .about-product__characteristics-block___dopDescr___images2 > img,
+  .about-product__characteristics-block___dopDescr___images3 > img,
+  .about-product__characteristics-block___dopDescr___images4 > img,
+  .about-product__characteristics-block___dopDescr___images5 > img {
+    width: 550px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1023px) {
+  .about-product__reviews-block___img-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .about-product__characteristics-block___dopDescr___images > img,
+  .about-product__characteristics-block___dopDescr___images2 > img,
+  .about-product__characteristics-block___dopDescr___images3 > img,
+  .about-product__characteristics-block___dopDescr___images4 > img,
+  .about-product__characteristics-block___dopDescr___images5 > img {
+    width: 750px;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1199px) {
+  .about-product__reviews-block___img-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .about-product__characteristics-block___dopDescr___images > img,
+  .about-product__characteristics-block___dopDescr___images2 > img,
+  .about-product__characteristics-block___dopDescr___images3 > img,
+  .about-product__characteristics-block___dopDescr___images4 > img,
+  .about-product__characteristics-block___dopDescr___images5 > img {
+    width: 800px;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 2048px) {
+  .about-product__characteristics-block___dopDescr___images > img,
+  .about-product__characteristics-block___dopDescr___images2 > img,
+  .about-product__characteristics-block___dopDescr___images3 > img,
+  .about-product__characteristics-block___dopDescr___images4 > img,
+  .about-product__characteristics-block___dopDescr___images5 > img {
+    width: 900px;
+  }
+}
+
+
+

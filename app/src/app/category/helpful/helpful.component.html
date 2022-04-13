@@ -1,0 +1,20 @@
+
+
+<main>
+  <div class="container">
+    <div class="row row-offcanvas row-offcanvas-right">
+      <router-outlet name="sidemenuhelpful"></router-outlet>
+      <div class="col-xs-12 wrapper">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a routerLink="/home">Главная</a></li>
+          <li class="breadcrumb-item active">Полезное</li>
+        </ol>
+        <div class="jumbotron">
+          <h1>Категории полезное</h1>
+          <p>Здесь Вы встретите топовые гроу-репорты, отобраные статьи по выращиванию, видео-обозоры, новости из канна мира и многое другое.</p>
+        </div>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,20 @@
+
+
+<main>
+  <div class="container">
+    <div class="row row-offcanvas row-offcanvas-right">
+      <router-outlet name="sidemenupartners"></router-outlet>
+      <div class="col-xs-12 wrapper">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a routerLink="/home">Главная</a></li>
+          <li class="breadcrumb-item active">Партнеры</li>
+        </ol>
+        <div class="jumbotron">
+          <h1>Категории партнеров</h1>
+          <p>Отобрали для вас только провереные компание, услугами которых пользуемся сами на протяжении долгих лет.</p>
+        </div>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</main>

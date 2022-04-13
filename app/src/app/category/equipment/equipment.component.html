@@ -1,0 +1,20 @@
+
+
+<main>
+  <div class="container">
+    <div class="row row-offcanvas row-offcanvas-right">
+      <router-outlet name="sidemenuequipment"></router-outlet>
+      <div class="col-xs-12 wrapper">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a routerLink="/home">Главная</a></li>
+          <li class="breadcrumb-item active">Оборудование</li>
+        </ol>
+        <div class="jumbotron">
+          <h1>Категории оборудование</h1>
+          <p>Собственное производсто с иследовательским центром. Показатели на 30-40% выше чем у конкурентов, а цена ниже.</p>
+        </div>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</main>

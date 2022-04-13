@@ -1,0 +1,300 @@
+<div class="container">
+
+  <div class="social-search-block">
+
+    <a target="_blank" class="social-search-block__item1" href="https://t.me/Hemp_Tech">
+      <img src="/assets/photo/telegram%20(1).png" alt="telegram">
+    </a>
+
+    <a target="_blank" class="social-search-block__item2"
+       href="https://www.youtube.com/channel/UC7PgInJUIvJogege-_weCmA">
+      <img src="/assets/photo/youtube.png" alt="youtube">
+    </a>
+
+    <a target="_blank" class="social-search-block__item3" href="https://jahforum.net/">
+      <img style="width: 62px; height: 62px" src="/assets/photo/Adobe_20210527_104849.png" alt="marijuana">
+    </a>
+
+    <a target="_blank" class="social-search-block__item4" href="https://www.instagram.com/hemptech.official/?hl=ru">
+      <img src="/assets/photo/instagram%20(1).png" alt="Best led shop instagram">
+    </a>
+
+    <div class="phone-block">
+      <img class="phone-block__logo" (click)="closeWindowPhone()" src="/assets/photo/phone-call.png" alt="Phone">
+      <div class="phone-block__items" (click)="closeWindowPhone()" *ngIf="editedPhone">
+        <a class="phone-block__items___item" type="tel" href="tel:+79092052568
+">+79092052568
+        </a>
+        <a class="phone-block__items___item" type="tel" href="tel:+380969690432">+380969690432</a>
+      </div>
+    </div>
+
+    <div class="site-search">
+      <div class="site-search-wrapper">
+        <input id="search" name="search" style="border-radius: 30px" class="site-search__input"
+               placeholder="Поиск..." [(ngModel)]="searchV">
+        <button class="social-search-block__btn-closeSearch" *ngIf="searchV" (click)="onCloseSearch()" >
+          <img class="social-search-block__btn-closeSearch___img" src="/assets/photo/cancel%20(1).png" alt="Cancel Search">
+        </button>
+        <label for="search">
+          <img src="/assets/photo/find.png" alt="find">
+        </label>
+      </div>
+      <div class="site-search__products-block-wrapper">
+        <div class="site-search__products-block" *ngFor="let product of (productsSearch | productsSearch:searchV)">
+          <div class="site-search__products-block___photo-wrapper">
+            <img class="site-search__products-block___photo" *ngIf="product.img && searchV"
+                 src="{{product.img}}" alt="{{product.name}}">
+          </div>
+          <div class="search-block__about-products">
+            <a href="/products/{{product.id}}" (click)="onCloseSearch()" class="site-search__products-block___link"
+               *ngIf="product.name && searchV">{{product.name}}</a>
+            <span class="site-search__products-block___price"
+                  *ngIf="product.costPrice && searchV">{{product.costPrice | currency}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--    <a href="">login</a>-->
+    <!--    <span>/</span>-->
+    <!--    <a href="">register</a>-->
+  </div>
+
+  <div class="header">
+
+    <!--    <input type="checkbox"  class="openSidebarMenu" id="openSidebarMenu">-->
+    <!--    <label for="openSidebarMenu" class="sidebarIconToggle">-->
+    <!--      <div class="spinner diagonal part-1"></div>-->
+    <!--      <div class="spinner horizontal"></div>-->
+    <!--      <div class="spinner diagonal part-2"></div>-->
+    <!--    </label>-->
+    <!--    <div id="sidebarMenu">-->
+    <!--      <div class="main-content-wrapper">-->
+    <!--        <a href="#news">News</a>-->
+    <!--        <a href="#contact">Contact</a>-->
+    <!--        <a href="#about">About</a>-->
+    <!--      </div>-->
+    <!--    </div>-->
+
+
+    <div class="header-logo">
+      <a routerLink="home"><span class="header-logo__text">Hemp&Technologies</span></a>
+    </div>
+
+    <div ngbDropdown class="menu-burger__header">
+
+      <nav role="navigation">
+        <div id="menuToggle">
+          <input type="checkbox"/>
+          <span></span>
+          <span></span>
+          <span></span>
+          <ul id="menu">
+            <div *ngFor="let category of category" ngbDropdown class="d-inline-block">
+              <button [routerLink]="'/nutrition'" *ngIf="category.id == 'nutrition'" class="btn btn-outline-primary"
+                      id="dropdownBasicSmall1" ngbDropdownToggle>
+                {{ category.name }}</button>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasicSmall1">
+                <button routerLink="/nutrition/coconut" ngbDropdownItem>Кокос</button>
+                <button routerLink="/nutrition/land" ngbDropdownItem>Земля</button>
+                <button routerLink="/nutrition/stimulants" ngbDropdownItem>Стимуляторы</button>
+                <button routerLink="/nutrition/substrate" ngbDropdownItem>Субстраты</button>
+              </div>
+            </div>
+
+            <div *ngFor="let category of category" ngbDropdown class="d-inline-block">
+              <button routerLink="equipment" *ngIf="category.id == 'equipment'" class="btn btn-outline-primary"
+                      id="dropdownBasicSmall2" ngbDropdownToggle>
+                {{ category.name }}</button>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasicSmall2">
+                <button routerLink="/equipment/lighting" ngbDropdownItem>Свет</button>
+                <button routerLink="/equipment/pots" ngbDropdownItem>Горшки</button>
+                <button routerLink="/equipment/measuring-instruments" ngbDropdownItem>Измерительные приборы</button>
+                <button routerLink="/equipment/reflective-elements" ngbDropdownItem>Светоотражающие элементы</button>
+                <button routerLink="/equipment/driver" ngbDropdownItem>Драйвера</button>
+                <button routerLink="/equipment/air" ngbDropdownItem>Воздух</button>
+                <button routerLink="/equipment/other" ngbDropdownItem>Другое</button>
+              </div>
+            </div>
+
+            <div *ngFor="let category of category" ngbDropdown class="d-inline-block">
+              <button routerLink="seeds" *ngIf="category.id == 'seeds'" class="btn btn-outline-primary"
+                      id="dropdownBasicSmall3"
+                      ngbDropdownToggle>
+                {{ category.name }}</button>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasicSmall3">
+                <button routerLink="/seeds/auto-fem" ngbDropdownItem>Авто-феменезированые</button>
+                <button routerLink="/seeds/fem" ngbDropdownItem>Фото-феменезированые</button>
+                <button routerLink="/seeds/regular" ngbDropdownItem>Регулярные</button>
+                <button routerLink="/seeds/fast-growing" ngbDropdownItem>Скорострельные сорта</button>
+                <button routerLink="/seeds/faintly-smelling" ngbDropdownItem>Слабопахнущие сорта</button>
+                <button routerLink="/seeds/fruitful" ngbDropdownItem>Урожайные сорта</button>
+                <button routerLink="/seeds/powerful" ngbDropdownItem>Ватноножные сорта</button>
+                <button routerLink="/seeds/healing" ngbDropdownItem>Целительные сорта</button>
+              </div>
+            </div>
+
+            <div *ngFor="let category of category" ngbDropdown class="d-inline-block">
+              <button routerLink="partners" *ngIf="category.id == 'partners'" class="btn btn-outline-primary"
+                      id="dropdownBasicSmall4" ngbDropdownToggle>
+                {{ category.name }}</button>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasicSmall4">
+                <button routerLink="/partners/smoking-accessories" ngbDropdownItem>Курительные аксессуары</button>
+                <button routerLink="/partners/clothes" ngbDropdownItem>Одежда</button>
+                <button routerLink="/partners/food" ngbDropdownItem>Продукты питания</button>
+                <button routerLink="/partners/cosmetics" ngbDropdownItem>Косметика</button>
+                <button routerLink="/partners/events" ngbDropdownItem>События</button>
+              </div>
+            </div>
+
+            <div *ngFor="let category of category" ngbDropdown class="d-inline-block">
+              <button routerLink="helpful" *ngIf="category.id == 'helpful'" class="btn btn-outline-primary"
+                      id="dropdownBasicSmall5"
+                      ngbDropdownToggle>
+                {{ category.name }}</button>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasicSmall5">
+                <button routerLink="/helpful/video" ngbDropdownItem>Видео</button>
+                <button routerLink="/helpful/reports" ngbDropdownItem>Репорты</button>
+                <button routerLink="/helpful/news" ngbDropdownItem>Новости</button>
+                <button routerLink="/helpful/kitchen" ngbDropdownItem>Кухня</button>
+                <button routerLink="/helpful/articles" ngbDropdownItem>Статьи</button>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </nav>
+
+    </div>
+
+
+    <div class="menu__header">
+      <div *ngFor="let category of category" ngbDropdown class="d-inline-block">
+        <button [routerLink]="'/nutrition'" *ngIf="category.id == 'nutrition'" class="btn btn-outline-primary"
+                id="dropdownBasic1" ngbDropdownToggle>
+          {{ category.name }}</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button routerLink="/nutrition/coconut" ngbDropdownItem>Кокос</button>
+          <button routerLink="/nutrition/land" ngbDropdownItem>Земля</button>
+          <button routerLink="/nutrition/stimulants" ngbDropdownItem>Стимуляторы</button>
+          <button routerLink="/nutrition/substrate" ngbDropdownItem>Субстраты</button>
+        </div>
+      </div>
+
+      <div *ngFor="let category of category" ngbDropdown class="d-inline-block">
+        <button routerLink="equipment" *ngIf="category.id == 'equipment'" class="btn btn-outline-primary"
+                id="dropdownBasic2" ngbDropdownToggle>
+          {{ category.name }}</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+          <button routerLink="/equipment/lighting" ngbDropdownItem>Свет</button>
+          <button routerLink="/equipment/pots" ngbDropdownItem>Горшки</button>
+          <button routerLink="/equipment/measuring-instruments" ngbDropdownItem>Измерительные приборы</button>
+          <button routerLink="/equipment/reflective-elements" ngbDropdownItem>Светоотражающие элементы</button>
+          <button routerLink="/equipment/driver" ngbDropdownItem>Драйвера</button>
+          <button routerLink="/equipment/air" ngbDropdownItem>Воздух</button>
+          <button routerLink="/equipment/other" ngbDropdownItem>Другое</button>
+        </div>
+      </div>
+
+      <div *ngFor="let category of category" ngbDropdown class="d-inline-block">
+        <button routerLink="seeds" *ngIf="category.id == 'seeds'" class="btn btn-outline-primary" id="dropdownBasic3"
+                ngbDropdownToggle>
+          {{ category.name }}</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic3">
+          <button routerLink="/seeds/auto-fem" ngbDropdownItem>Авто-феменезированые</button>
+          <button routerLink="/seeds/fem" ngbDropdownItem>Фото-феменезированые</button>
+          <button routerLink="/seeds/regular" ngbDropdownItem>Регулярные</button>
+          <button routerLink="/seeds/fast-growing" ngbDropdownItem>Скорострельные сорта</button>
+          <button routerLink="/seeds/faintly-smelling" ngbDropdownItem>Слабопахнущие сорта</button>
+          <button routerLink="/seeds/fruitful" ngbDropdownItem>Урожайные сорта</button>
+          <button routerLink="/seeds/powerful" ngbDropdownItem>Ватноножные сорта</button>
+          <button routerLink="/seeds/healing" ngbDropdownItem>Целительные сорта</button>
+        </div>
+      </div>
+
+      <div *ngFor="let category of category" ngbDropdown class="d-inline-block">
+        <button routerLink="partners" *ngIf="category.id == 'partners'" class="btn btn-outline-primary"
+                id="dropdownBasic4" ngbDropdownToggle>
+          {{ category.name }}</button>
+        <div class="wrapper-dropdown" ngbDropdownMenu aria-labelledby="dropdownBasic4">
+          <button class="dropdown-item" routerLink="/partners/smoking-accessories" ngbDropdownItem>Курительные
+            аксессуары
+          </button>
+          <button class="dropdown-item" routerLink="/partners/clothes" ngbDropdownItem>Одежда</button>
+          <button class="dropdown-item" routerLink="/partners/food" ngbDropdownItem>Продукты питания</button>
+          <button class="dropdown-item" routerLink="/partners/cosmetics" ngbDropdownItem>Косметика</button>
+          <button class="dropdown-item" routerLink="/partners/events" ngbDropdownItem>События</button>
+        </div>
+      </div>
+
+      <div *ngFor="let category of category" ngbDropdown class="d-inline-block">
+        <button routerLink="helpful" *ngIf="category.id == 'helpful'" class="btn btn-outline-primary"
+                id="dropdownBasic5"
+                ngbDropdownToggle>
+          {{ category.name }}</button>
+        <div class="last-menuDropdown" ngbDropdownMenu aria-labelledby="dropdownBasic5">
+          <button routerLink="/helpful/video" ngbDropdownItem>Видео</button>
+          <button routerLink="/helpful/reports" ngbDropdownItem>Репорты</button>
+          <button routerLink="/helpful/news" ngbDropdownItem>Новости</button>
+          <button routerLink="/helpful/kitchen" ngbDropdownItem>Кухня</button>
+          <button routerLink="/helpful/articles" ngbDropdownItem>Статьи</button>
+        </div>
+      </div>
+    </div>
+
+    <a routerLink="/favorite" class="favorite-icon" style="cursor: pointer">
+      <img src="/assets/photo/favorite%20(3).png" alt="favorite">
+      <p>
+        <span class="favorite-icon__counter" matBadge="{{itemsFv.length}}" matBadgePosition="below before"
+              matBadgeColor="accent"></span>
+      </p>
+    </a>
+
+    <a routerLink="/cart" class="cart-icon" style="cursor: pointer">
+      <img src="/assets/photo/shopping-cart%202.png" alt="shipping_cart">
+      <p>
+        <span class="cart-icon__counter" matBadge="{{items.length}}" matBadgePosition="above after"
+              matBadgeColor="accent"></span>
+      </p>
+      <!--      <span style="background: yellow">{{ total | currency }}</span>-->
+    </a>
+
+  </div>
+</div>
+<router-outlet></router-outlet>
+
+<div class="dropDownChat-block" ngbDropdown>
+  <div ngbDropdownMenu class="d-inline-block">
+    <button ngbDropdownToggle class="btn btn-outline-primary">
+      <img src="/assets/photo/peace.png" alt="Logo" id="dropdownBasic14">
+    </button>
+    <div ngbDropdownMenu aria-labelledby="dropdownBasic14">
+      <a href=" https://telegram.me/meladzev" target="_blank" ngbDropdownItem><img
+        src="/assets/photo/telegram%20(4).png" alt="Telegram"></a>
+      <a href="viber://chat?number=%2B380969690432" target="_blank" ngbDropdownItem><img
+        src="/assets/photo/viber%20(1).png" alt="Viber"></a>
+      <a href="https://wa.me/380969690432" target="_blank" ngbDropdownItem><img src="/assets/photo/whatsapp%20(1).png"
+                                                                                alt="WhatsApp"></a>
+    </div>
+  </div>
+</div>
+
+
+<!--<div *ngFor="let category of category" ngbDropdown class="d-inline-block">-->
+<!--  <button routerLink="seeds" *ngIf="category.id == 'seeds'" class="btn btn-outline-primary" id="dropdownBasic13"-->
+<!--          ngbDropdownToggle>-->
+<!--    {{ category.name }}</button>-->
+<!--  <div ngbDropdownMenu aria-labelledby="dropdownBasic13">-->
+<!--    <button routerLink="/seeds/auto-fem" ngbDropdownItem>Авто-феменезированые</button>-->
+<!--    <button routerLink="/seeds/fem" ngbDropdownItem>Фото-феменезированые</button>-->
+<!--    <button routerLink="/seeds/regular" ngbDropdownItem>Регулярные</button>-->
+<!--    <button routerLink="/seeds/fast-growing" ngbDropdownItem>Скорострельные сорта</button>-->
+<!--    <button routerLink="/seeds/faintly-smelling" ngbDropdownItem>Слабопахнущие сорта</button>-->
+<!--    <button routerLink="/seeds/fruitful" ngbDropdownItem>Урожайные сорта</button>-->
+<!--    <button routerLink="/seeds/powerful" ngbDropdownItem>Ватноножные сорта</button>-->
+<!--    <button routerLink="/seeds/healing" ngbDropdownItem>Целительные сорта</button>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+

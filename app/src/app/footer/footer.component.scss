@@ -1,0 +1,285 @@
+.wrapper {
+  display: grid;
+  justify-content: center;
+  background: url(../../assets/photo/canna-wallper.jpeg);
+  background-size: cover;
+  color: white;
+}
+
+h3 {
+  font: 500 22px/28px Roboto, "Helvetica Neue", sans-serif;
+  letter-spacing: normal;
+  margin: 0 0 16px;
+}
+
+.footer-header-block {
+  text-align: center;
+  margin: 20px;
+}
+
+.footer-header-block__logo {
+  margin: 20px;
+  text-decoration-line: none;
+  font-size: 34px;
+  color: #2f4d02;
+  text-shadow: 0 -4px 2px #ffffff, 0 -4px 2px #ffffff, 0 4px 2px #ffffff, 0 4px 2px #ffffff, -4px 0 2px #ffffff, 4px 0 2px #ffffff, -4px 0 2px #ffffff, 4px 0 2px #ffffff, -1px -4px 2px #ffffff, 1px -4px 2px #ffffff, -1px 4px 2px #ffffff, 1px 4px 2px #ffffff, -4px -1px 2px #ffffff, 4px -1px 2px #ffffff, -4px 1px 2px #ffffff, 4px 1px 2px #ffffff, -2px -4px 2px #ffffff, 2px -4px 2px #ffffff, -2px 4px 2px #ffffff, 2px 4px 2px #ffffff, -4px -2px 2px #ffffff, 4px -2px 2px #ffffff, -4px 2px 2px #ffffff, 4px 2px 2px #ffffff, -3px -4px 2px #ffffff, 3px -4px 2px #ffffff, -3px 4px 2px #ffffff, 3px 4px 2px #ffffff, -4px -3px 2px #ffffff, 4px -3px 2px #ffffff, -4px 3px 2px #ffffff, 4px 3px 2px #ffffff, -4px -4px 2px #ffffff, 4px -4px 2px #ffffff, -4px 4px 2px #ffffff, 4px 4px 2px #ffffff, -4px -4px 2px #ffffff, 4px -4px 2px #ffffff, -4px 4px 2px #ffffff, 4px 4px 2px #ffffff;
+}
+
+.wrapper-shipping {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 500px;
+  column-gap: 30px;
+  text-align: start;
+  font-size: 18px;
+  padding: 20px;
+}
+.footer-block__contacts {
+  align-items: flex-end;
+  //grid-area: ct;
+}
+
+.footer-block__shipping {
+  //grid-area: sp;
+}
+
+.footer-block__shipping > p {
+  background: #379930;
+  padding: 10px;
+  border-radius: 30px;
+  max-width: max-content;
+  color: white;
+}
+
+//.footer-block__maps {
+//  text-align: center;
+//}
+.footer-block__schedule {
+  text-align: center;
+}
+
+agm-map {
+  height: 300px;
+}
+
+.footer-block__contacts {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  padding: 20px;
+}
+
+.footer-block__contacts > a {
+  background: deepskyblue;
+  padding: 10px;
+  border-radius: 30px;
+  max-width: max-content;
+  color: white;
+  text-align: center;
+}
+.footer-block__schedule-header {
+  background: rgb(191,136,17);
+  background: linear-gradient(90deg, rgba(191,136,17,1) 20%, rgba(198,100,221,1) 80%);
+  border-radius: 30px;
+  font-size: 18px;
+}
+.footer-block__schedule > p {
+  background: rgb(191,136,17);
+  background: linear-gradient(90deg, rgba(191,136,17,1) 20%, rgba(198,100,221,1) 80%);
+  border-radius: 30px;
+  font-size: 14px;
+}
+@media only screen and (min-width : 320px) and (max-width : 360px) {
+  .footer-header-block__logo {
+    font-size: 24px!important;
+  }
+}
+@media only screen and (min-width : 320px) and (max-width : 413px) {
+  agm-map {
+    height: 200px;
+    width: 285px;
+  }
+  .footer-header-block {
+    margin: 15px;
+  }
+  .footer-header-block__logo {
+    font-size: 30px;
+  }
+  .wrapper {
+    background: url(../../assets/photo/canna-wallper.jpeg) 0 64%;
+    background-size: contain;
+  }
+  .wrapper-shipping {
+    display: grid;
+    grid-template-areas:
+        'sp sp sp sp sp sp sp sp'
+        'mp mp mp mp mp mp mp mp'
+        'ct ct ct ct ct ct ct ct';
+    column-gap: 5px;
+    padding: 0 8px 0 8px;
+    grid-template-rows: 175px 275px 455px;
+  }
+  .footer-block__shipping > p {
+    background: #379930;
+    border-radius: 30px;
+    max-width: max-content;
+    color: white;
+    margin: 12px 0;
+    font-size: 12px;
+    padding: 16px;
+  }
+  .footer-block__contacts > a {
+    background: deepskyblue;
+    padding: 16px;
+    border-radius: 30px;
+    max-width: max-content;
+    color: white;
+    margin: 6px 0;
+    font-size: 12px;
+  }
+  .footer-block__contacts {
+    padding: 0;
+    grid-area: ct;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
+  .footer-block__shipping {
+    grid-area: sp;
+    justify-content: center;
+    display: grid;
+    h3 {
+      margin: 0;
+    }
+  }
+  //.footer-block__maps {
+  //  grid-area: mp;
+  //  justify-content: center;
+  //  display: grid;
+  //}
+  .footer-block__schedule {
+    grid-area: mp;
+    justify-content: center;
+    display: grid;
+  }
+}
+@media only screen and (min-width : 414px) and (max-width : 503px) {
+  agm-map {
+    height: 220px;
+  }
+
+  .footer-header-block {
+    margin: 15px;
+  }
+  .footer-header-block__logo {
+    font-size: 30px;
+  }
+  .wrapper {
+    background: url(../../assets/photo/canna-wallper.jpeg) 0 64%;
+    background-size: contain;
+  }
+  .wrapper-shipping {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr;
+    column-gap: 5px;
+    padding: 0 8px 0 8px;
+  }
+  .footer-block__shipping > p {
+    background: #379930;
+    padding: 6px;
+    border-radius: 30px;
+    max-width: max-content;
+    color: white;
+    margin: 12px 0;
+    font-size: 12px;
+  }
+  .footer-block__contacts > a {
+    background: deepskyblue;
+    padding: 6px;
+    border-radius: 30px;
+    max-width: max-content;
+    color: white;
+    margin: 6px 0;
+    font-size: 12px;
+  }
+  .footer-block__contacts {
+    padding: 0;
+  }
+}
+@media only screen and (min-width : 504px) and (max-width : 767px) {
+  agm-map {
+    height: 250px;
+  }
+  .footer-header-block {
+    margin: 15px;
+  }
+  .footer-header-block__logo {
+    font-size: 30px;
+  }
+  .wrapper {
+    background: url(../../assets/photo/canna-wallper.jpeg) 0 64%;
+    background-size: contain;
+  }
+  .wrapper-shipping {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr;
+    column-gap: 5px;
+    padding: 0 8px 0 8px;
+  }
+  .footer-block__shipping > p {
+    background: #379930;
+    padding: 6px;
+    border-radius: 30px;
+    max-width: max-content;
+    color: white;
+    margin: 12px 0;
+    font-size: 12px;
+  }
+  .footer-block__contacts > a {
+    background: deepskyblue;
+    padding: 6px;
+    border-radius: 30px;
+    max-width: max-content;
+    color: white;
+    margin: 6px 0;
+    font-size: 12px;
+  }
+  .footer-block__contacts {
+    padding: 0;
+  }
+}
+@media only screen and (min-width : 768px) and (max-width : 992px) {
+  .wrapper {
+    background: url(../../assets/photo/canna-wallper.jpeg) 0 64%;
+    background-size: contain;
+  }
+  .wrapper-shipping {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    height: 575px;
+  }
+  .footer-block__shipping > p {
+    background: #379930;
+    padding: 8px;
+    border-radius: 30px;
+    max-width: max-content;
+    color: white;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+  .footer-block__contacts > a {
+    background: deepskyblue;
+    padding: 8px;
+    border-radius: 30px;
+    max-width: max-content;
+    color: white;
+    margin: 8px 0;
+    font-size: 14px;
+  }
+  .footer-block__contacts {
+    padding: 0;
+  }
+}

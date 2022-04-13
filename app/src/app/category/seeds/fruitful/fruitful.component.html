@@ -1,0 +1,71 @@
+<main>
+  <div class="container">
+    <div class="lighting-wrapper">
+      <div class="lighting-block col-xs-12 col-sm-9">
+        <div class="jumbotron">
+          <h1>Урожайные</h1>
+          <p>Гарантия на всхождение!</p>
+        </div>
+        <!--        как добавлю подкатегории-->
+        <!--        <router-outlet></router-outlet>-->
+        <h3>Список продуктов</h3>
+
+        <div class="wrapper">
+          <div *ngFor="let product of products">
+            <div *ngIf="product.subCategory === 'fruitful'">
+              <div class="products-wrapper">
+
+                <img style="position: absolute; margin-left: 160px; margin-top: 145px;" *ngIf="product.onSale === true" src="/assets/photo/discount.png" alt="Discount product">
+                <img style="position: absolute; margin-left: 160px; margin-top: 10px;" *ngIf="product.newP === true" src="/assets/photo/new.png" alt="New product">
+                <img style="max-height: 200px; max-width: 200px" [src]="product.img" alt="pushka photo">
+
+
+                <h3 class="card-title">
+                  <a class="card-link" style="cursor: pointer" [title]="product.name + ' details'"
+                     [routerLink]="['/products', product.id]">
+                    {{ product.name }}
+                  </a>
+                </h3>
+
+                <h2 class="card-price">
+                  {{ product.costPrice | currency }}
+                </h2>
+
+                <h2 style="background-color: red;" *ngIf="product.onSale == true" class="card-price">
+                  Скидка {{ product.salePrice | currency }}
+                </h2>
+
+                <p class="about-category" *ngIf="product.description">
+                  {{ product.description }}
+                </p>
+
+                <div class="btn-wrapper">
+<!--                  <button type="button" class="btn" (click)="share()">-->
+<!--                    <img style="max-width: 40px; max-height: 40px;" src="assets/photo/like.png" alt="favorite">-->
+<!--                  </button>-->
+
+                  <button (click)="addToFavorite(product)" class="btn" type="button">
+                    <img style="max-width: 40px; max-height: 40px;" src="assets/photo/favorite%20(4).png" alt="Add to Favorite">
+                  </button>
+
+                  <button (click)="addToCart(product)" class="btn" type="button">
+                    <img style="max-width: 40px; max-height: 40px;" src="assets/photo/add-cart.png" alt="Add to Cart">
+                  </button>
+                </div>
+
+                <app-product-alerts [product]="product"
+                                    (notify)="onNotify()">
+                </app-product-alerts>
+
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      <!--      <router-outlet name="sidemenulighting"></router-outlet>-->
+    </div>
+  </div>
+</main>

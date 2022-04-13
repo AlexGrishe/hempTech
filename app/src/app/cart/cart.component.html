@@ -1,0 +1,137 @@
+<div class="container">
+
+  <h3>Корзина</h3>
+  <h4 style="background: yellow; color: black; text-align: center; border-radius: 30px; border: 3px solid red;">
+    Покупка на сумму - {{ total | currency}}
+  </h4>
+  <div class="wrapper">
+
+    <div class="cart-form">
+      <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+
+        <div class="cart-form_input-item">
+          <label for="name">
+            Имя:
+          </label>
+          <input id="name" type="text" formControlName="name">
+        </div>
+
+        <div class="cart-form_input-item">
+          <label for="email">
+            Емейл:
+          </label>
+          <input id="email" type="email" formControlName="email">
+        </div>
+
+        <div class="cart-form_input-item">
+          <label for="tel">
+            Мобильный:
+          </label>
+          <input id="tel" type="tel" formControlName="tel">
+        </div>
+
+        <div class="payment btn-group btn-group-toggle" ngbRadioGroup>
+          <h3>Как с Вами связаться?</h3>
+          <label class="btn-primary" ngbButtonLabel for="telegram">
+            <input id="telegram" type="radio" ngbButton value="telegram" formControlName="messenger"> Telegram
+          </label>
+          <label class="btn-primary" ngbButtonLabel for="whatsapp">
+            <input id="whatsapp" type="radio" ngbButton value="whatsapp" formControlName="messenger"> WhatsApp
+          </label>
+          <label class="btn-primary" ngbButtonLabel for="viber">
+            <input id="viber" type="radio" ngbButton value="viber" formControlName="messenger"> Viber
+          </label>
+          <label class="btn-primary" ngbButtonLabel for="sms">
+            <input id="sms" type="radio" ngbButton value="sms" formControlName="messenger"> SMS
+          </label>
+        </div>
+
+        <div class="shipping btn-group btn-group-toggle" ngbRadioGroup>
+          <h3>Доставка</h3>
+          <label class="btn-primary" ngbButtonLabel for="SDEK">
+            <input id="SDEK" type="radio" ngbButton value="SDEK" formControlName="shipping"> СДЭК
+          </label>
+          <label class="btn-primary" ngbButtonLabel for="RashaPochta">
+            <input id="RashaPochta" type="radio" ngbButton value="RashaPochta" formControlName="shipping"> ПочтаРоссии
+          </label>
+        </div>
+
+        <div class="cart-form_input-item">
+          <label for="address">
+            Адрес:
+          </label>
+          <input id="address" type="text" formControlName="address">
+        </div>
+
+        <div class="cart-form_input-item">
+          <label for="promo">
+            Промокод:
+          </label>
+          <input id="promo" type="text" formControlName="promo">
+        </div>
+
+        <!--  <div>-->
+        <!--    <label for="payment">-->
+        <!--      Оплата:-->
+        <!--    </label>-->
+        <!--    <input id="payment" type="checkbox" formControlName="payment">-->
+        <!--  </div>-->
+
+        <div class="payment btn-group btn-group-toggle" ngbRadioGroup>
+          <h3>Оплата</h3>
+          <label class="btn-primary" ngbButtonLabel for="qiwi">
+            <input id="qiwi" type="radio" ngbButton value="qiwi" formControlName="payment"> Qiwi
+          </label>
+          <label class="btn-primary" ngbButtonLabel for="bitcoin">
+            <input id="bitcoin" type="radio" ngbButton value="bitcoin" formControlName="payment"> Bitcoin
+          </label>
+          <label class="btn-primary" ngbButtonLabel for="sberBank">
+            <input id="sberBank" type="radio" ngbButton value="sberbank" formControlName="payment"> СберБанк
+          </label>
+          <label class="btn-primary" ngbButtonLabel for="yandexMoney">
+            <input id="yandexMoney" type="radio" ngbButton value="yandexMoney" formControlName="payment"> Яндекс.Деньги
+          </label>
+        </div>
+
+        <p>
+          <a routerLink="/shipping">Цены на доставку</a>
+        </p>
+        <!--        <p style="color: black">-->
+        <!--          Сумма заказа:-->
+        <!--        </p>-->
+        <div class="checkout-block">
+          <button class="check-out-payment btn-primary">Оформить</button>
+          <hr>
+        </div>
+      </form>
+
+    </div>
+
+    <div class="cart-products">
+
+      <div class="cart-item" *ngFor="let item of items; let i = index">
+        <img class=".cart-item__title_img" src="{{ item.img }}" alt="Head foto cart">
+        <div class="cart-item_about-product">
+          <span><a class="cart-item_about-product__product-name"
+                   [routerLink]="['/products', item.id]">{{ item.name }}</a></span>
+          <span class="cart-item_about-product__product-costPrice">{{ item.costPrice | currency }}</span>
+          <span class="cart-item_about-product__product-costPrice"
+                style="font-size: 14px; max-width: 92px; background: green; text-align: center;">{{ (item.costPrice * item.amount) | currency }}</span>
+
+          <span class="changeQuantity-block" style="display: flex;">
+            <button class="btn btn-outline-success" (click)="decreaseAmount(item)">-</button>
+            <input class="form-control text-center ng-untouched ng-pristine ng-valid" (blur)="checkoutAmount(item)"
+                   [(ngModel)]="item.amount">
+            <button class="btn btn-outline-success" (click)="increaseAmount(item)">+</button>
+          </span>
+        </div>
+
+        <button class="btn" (click)="removeItem($event, item)"><img src="/assets/photo/delete.png" alt="Delete">
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,99 @@
+.articles-block {
+  max-width: 100%;
+  font: 600 24px/32px Roboto, "Helvetica Neue", sans-serif;
+}
+
+.jumbotron {
+  color: #ffffff;
+  background: rgb(47, 77, 2) url(../../../../assets/photo/articles-category-title.jpeg);
+  background-size: cover;
+  text-shadow: #1e8310 -2px 0px 16px;
+  border: 5px solid yellow;
+  font: 600 24px/32px Roboto, "Helvetica Neue", sans-serif;
+  padding: 20px 20px;
+}
+
+.jumbotron > h1 {
+  font: 400 30px/32px Roboto, "Helvetica Neue", sans-serif;
+  letter-spacing: normal;
+  margin: 40px 0;
+}
+
+.articles-block_items-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.articles-block_article-item {
+  background: rgb(24, 24, 24);
+  height: 420px;
+  background: linear-gradient(
+      45deg
+    , #3c8f3f, transparent);
+  text-align: center;
+  border: 3px solid white;
+  border-radius: 20px;
+  margin: 20px;
+  padding: 15px;
+}
+
+.articles-block_article-item__article-img {
+  max-width: 240px;
+  max-height: 180px;
+}
+
+
+
+.articles-block_article-item__title-article {
+  font: 500 18px/28px Roboto, "Helvetica Neue", sans-serif;
+  letter-spacing: normal;
+  margin: 5px 15px;
+  color: white;
+}
+
+.articles-block_article-item__about-article {
+  font: 400 16px/28px Roboto, "Helvetica Neue", sans-serif;
+  letter-spacing: normal;
+  margin: 5px 15px;
+  color: #eaeaea;
+  overflow: scroll;
+  text-overflow: ellipsis;
+  height: 90px;
+}
+@media only screen and (min-width : 320px) and (max-width : 379px) {
+  .articles-block_items-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .articles-block_article-item__about-article {
+    font: 400 12px/22px Roboto, "Helvetica Neue", sans-serif;
+  }
+  a {
+    font-size: 18px;
+  }
+  .articles-block_article-item {
+    margin: 10px 5px;
+  }
+  .articles-block_article-item__article-img {
+    max-width: 200px;
+    max-height: 150px;
+  }
+}
+@media only screen and (min-width : 380px) and (max-width : 479px) {
+  .articles-block_items-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .articles-block_article-item__about-article {
+    font: 400 12px/22px Roboto, "Helvetica Neue", sans-serif;
+  }
+  a {
+    font-size: 18px;
+  }
+}
+@media only screen and (min-width : 480px) and (max-width : 767px) {
+  .articles-block_items-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}

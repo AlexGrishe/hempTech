@@ -1,0 +1,247 @@
+<div class="container">
+  <div class="wrapper">
+
+    <div class="product-details" *ngIf="product">
+      <div class="product-details_title-block">
+        <h1>{{ product.name }}</h1>
+      </div>
+
+      <div id="about_product" class="about-product">
+
+        <div class="about-product__left-side">
+
+          <!--          <div class="about-product__left-side___links">-->
+          <!--            <a href="/">Отзывы</a>-->
+          <!--            <a [href]="characteristics">Характеристики</a>-->
+          <!--          </div>-->
+
+          <ngb-carousel style="width: 100%; height: 400px;" id="about-product__carousel" class="about-product__carousel"
+                        *ngIf="product">
+            <!--            (click)="showLightbox(0)"  добавить в img-->
+
+
+            <ng-template ngbSlide>
+              <div class="btn_wrapper" style="position: absolute; right: 10px; top: 10px; z-index: 1000">
+                <button class="btn btn-openImg" (click)="openImg()"><img src="/assets/photo/full-screen%20(4).png"
+                                                                         style="height: 32px; width: 32px;" alt="">
+                </button>
+                <button class="btn btn-closeImg" (click)="closeImg()"><img src="/assets/photo/reducevip.png"
+                                                                           style="height: 32px; width: 32px;" alt="">
+                </button>
+              </div>
+              <div id="ngbSlide1" style="height: 390px;" class="picsum-img-wrapper">
+                <img src="{{product.img}}" alt="Promotion Divine Seeds">
+              </div>
+            </ng-template>
+
+            <ng-template ngbSlide>
+              <div class="btn_wrapper" style="position: absolute; right: 10px; top: 10px; z-index: 1000">
+                <button class="btn btn-openImg" (click)="openImg()"><img src="/assets/photo/full-screen%20(4).png"
+                                                                         style="height: 32px; width: 32px;" alt="">
+                </button>
+                <button class="btn btn-closeImg" (click)="closeImg()"><img src="/assets/photo/reducevip.png"
+                                                                           style="height: 32px; width: 32px;" alt="">
+                </button>
+              </div>
+              <div id="ngbSlide2" style="height: 390px;" class="picsum-img-wrapper">
+                <img src="{{product.img2}}" alt="Random first slide">
+              </div>
+              <!--              <div class="carousel-caption">-->
+              <!--                <h3>Наше производство</h3>-->
+              <!--                <p>Качественные материалы, специалисты наивысшего уровня</p>-->
+              <!--              </div>-->
+            </ng-template>
+
+            <ng-template ngbSlide>
+              <div class="btn_wrapper" style="position: absolute; right: 10px; top: 10px; z-index: 1000">
+                <button class="btn btn-openImg" (click)="openImg()"><img src="/assets/photo/full-screen%20(4).png"
+                                                                         style="height: 32px; width: 32px;" alt="">
+                </button>
+                <button class="btn btn-closeImg" (click)="closeImg()"><img src="/assets/photo/reducevip.png"
+                                                                           style="height: 32px; width: 32px;" alt="">
+                </button>
+              </div>
+              <div id="ngbSlide3" style="height: 390px;" class="picsum-img-wrapper">
+                <img src="{{product.img3 }}" alt="Random second slide">
+              </div>
+            </ng-template>
+
+          </ngb-carousel>
+
+        </div>
+
+
+        <div class="about-product__right-side">
+          <div class="about-product__right-side___items">
+            <h4
+              style="justify-content: space-between; display: flex; background: whitesmoke; color: green; font-size: 22px; border-radius: 20px; padding: 8px;">
+              <span>Цена:</span>
+              <span>{{ product.costPrice | currency }}</span></h4>
+            <h4
+              style="justify-content: space-between; display: flex; background: whitesmoke; color: red; font-size: 24px; border-radius: 20px; padding: 8px;"
+              *ngIf="product.onSale == true"><span>Акционная цена:</span> <span>{{ product.salePrice | currency}}</span>
+            </h4>
+            <p class="about-product_warrant-text">{{product.warrant}}</p>
+            <div class="about-product__payment">
+              <p>Оплата</p>
+              <div>
+                <span>
+                <img style="max-width: 64px; max-height: 64px" class="about-product__payment__img"
+                     src="assets/photo/bitcoin.png" alt="Bitcoin">
+              </span>
+                <span>
+                <img style="max-width: 64px; max-height: 64px" class="about-product__payment__img"
+                     src="assets/photo/kisspng-cryptocurrency-vector-graphics-stock-photography-i-qiwi-crypto-cryptocurrency-cryptocurrencies-ca-5b6f90e8d0f506.3908229415340382488559.png"
+                     alt="Qiwi">
+              </span>
+                <span>
+                <img style="max-width: 64px; max-height: 64px" class="about-product__payment__img"
+                     src="assets/photo/kisspng-computer-icons-screenshot-sberbank-of-russia-irradiate-0-1-5-5aeafb34e75a09.1560892515253491729476.png"
+                     alt="Sberbank">
+              </span>
+                <span>
+                <img style="width: 64px;
+                            height: 64px;
+                            background: beige;
+                            border-radius: 50px; max-width: 64px; max-height: 64px" class="about-product__payment__img"
+                     src="assets/photo/kisspng-ps-yandex-money-llc-payment-bank-5b7ff2461819e1.5823382715351117500987.png"
+                     alt="Yandex money">
+              </span>
+              </div>
+            </div>
+          </div>
+          <div class="about-product__right-side___btn">
+            <button type="button" class="btn" (click)="goToProducts()"><img style="max-width: 40px; max-height: 40px;"
+                                                                            src="assets/photo/cursor.png" alt="arrow">
+            </button>
+            <button type="button" class="btn" (click)="addToFavorite(product)"><img
+              style="max-width: 40px; max-height: 40px;"
+              src="assets/photo/favorite%20(4).png" alt="favorite">
+            </button>
+            <button type="button" class="btn" (click)="addToCart(product)"><img
+              style="max-width: 40px; max-height: 40px;"
+              src="assets/photo/add-cart.png" alt="cart">
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="about-product__descriptionAll-block">
+        <h3 (click)="closeWindowDs()">Описание</h3><span (click)="closeWindowDs()"><img
+        src="/assets/photo/down-arrow.png"
+        alt="Down Arrow"></span>
+        <div *ngIf="editedDs">
+          <p *ngIf="product.descriptionAll">{{ product.descriptionAll }}</p>
+          <div *ngIf="product.descrImg || product.descrImg2 || product.descrImg3 || product.descrDop"
+               class="about-product__characteristics-block___dopDescr">
+            <div class="about-product__characteristics-block___dopDescr___images-block">
+              <p class="about-product__characteristics-block___dopDescr___images" *ngIf="product.descrImg"><img
+                src="{{ product.descrImg }}"
+                alt="Test laboratory 1">
+              </p>
+              <p class="about-product__characteristics-block___dopDescr___images2" *ngIf="product.descrImg2"><img
+                src="{{ product.descrImg2 }}" alt="Test laboratory 2">
+              </p>
+              <p class="about-product__characteristics-block___dopDescr___images3" *ngIf="product.descrImg3"><img
+                src="{{ product.descrImg3 }}" alt="Test laboratory 3">
+              </p>
+              <p class="about-product__characteristics-block___dopDescr___images4" *ngIf="product.descrImg4"><img
+                src="{{ product.descrImg4 }}" alt="Test laboratory 4">
+              </p>
+              <p class="about-product__characteristics-block___dopDescr___images5" *ngIf="product.descrImg5"><img
+                src="{{ product.descrImg5 }}" alt="Test laboratory 5">
+              </p>
+            </div>
+            <p *ngIf="product.descrDop"
+               class="about-product__characteristics-block___dopDescr___about-descr">{{ product.descrDop }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-product__characteristics-block">
+        <h3 (click)="closeWindowCh()">Характеристики</h3><span (click)="closeWindowCh()"><img
+        src="/assets/photo/down-arrow.png"
+        alt="Down Arrow"></span>
+        <div *ngIf="editedCh"><p
+          class="about-product__characteristics-block___description">{{ product.description }}</p>
+          <p *ngIf="product.consumption"><span>Потребляемая мощность светильника: </span>{{ product.consumption }}</p>
+          <p *ngIf="product.manufacturerLed"><span>Производитель светодиодов: </span>{{ product.manufacturerLed }}</p>
+          <p *ngIf="product.typeLed"><span>Тип светодиодов: </span>{{ product.typeLed }}</p>
+          <p *ngIf="product.matrixPowerCob"><span>Мощность COB матрицы: </span>{{ product.matrixPowerCob }}</p>
+          <p *ngIf="product.colourTemperature"><span>Цветовая температура: </span>{{ product.colourTemperature }}</p>
+          <p *ngIf="product.colorRenderingIndex"><span>Индекс цветопередачи (CRI): </span>{{ product.colorRenderingIndex }}</p>
+          <p *ngIf="product.redDiode660"><span>Красные светодиоды 660nm: </span>{{ product.redDiode660 }}</p>
+          <p *ngIf="product.colourTemperatureCob"><span>Цветовая температура: </span>{{ product.colourTemperatureCob }}</p>
+          <p *ngIf="product.lifeCycleCategory"><span>Категория жизненного цикла: </span>{{ product.lifeCycleCategory }}</p>
+          <p *ngIf="product.characteristicsWithDNaT"><span>Сравнительная характеристика с ДНаТ: </span>{{ product.characteristicsWithDNaT }}</p>
+          <p *ngIf="product.scatteringAngle"><span>Угол рассеивания: </span>{{ product.scatteringAngle }}</p>
+          <p *ngIf="product.moistureProtectionDegree"><span>Степень влагозащиты: </span>{{ product.moistureProtectionDegree }}</p>
+          <p *ngIf="product.recommendedLightingArea"><span>Рекомендуемая площадь освещения:  </span>{{ product.recommendedLightingArea }}</p>
+          <p *ngIf="product.constantPressure"><span>Постоянное напряжение: </span>{{ product.constantPressure }}</p>
+          <p *ngIf="product.powerCordLength"><span>Длина шнура питания: </span>{{ product.powerCordLength }}</p>
+          <p *ngIf="product.dimming"><span>Диммирование: </span>{{ product.dimming }}</p>
+          <p *ngIf="product.scattering"><span>Угол рассеивания оптики: </span>{{ product.scattering }}</p>
+          <p *ngIf="product.efficiency"><span>Эффективность системы: </span>{{ product.efficiency }}</p>
+          <p *ngIf="product.flash"><span>Засвет: </span>{{ product.flash }}</p>
+          <p *ngIf="product.whiteDiode"><span>Белые светодиоды:</span>{{ product.whiteDiode }}</p>
+          <p *ngIf="product.colourTemperatureWD"><span>Цветовая температура: </span>{{ product.colourTemperatureWD }}
+          </p>
+          <p *ngIf="product.efficiencyWD"><span>Эффективность белых светодиодов: </span>{{ product.efficiencyWD }}</p>
+          <p *ngIf="product.lightFlowWD"><span>Световой поток: </span>{{ product.lightFlowWD }}</p>
+          <p *ngIf="product.quantityWD"><span>Количество белых светодиодов: </span>{{ product.quantityWD }}</p>
+<!--          <p *ngIf="product.redDiode"><span>Красные диоды: </span>{{ product.redDiode }}</p>-->
+          <p *ngIf="product.waveLengthRD"><span>Длина волны: </span>{{ product.waveLengthRD }}</p>
+          <p *ngIf="product.quantityRD"><span>Количество красных светодиодов: </span>{{ product.quantityRD }}</p>
+          <p *ngIf="product.efficiencyRD"><span>Эффективность красных светодиодов: </span>{{ product.efficiencyRD }}</p>
+          <p *ngIf="product.farRedDiode"><span>Светодиоды Far Red: </span>{{ product.farRedDiode }}</p>
+          <p *ngIf="product.redDiode"><span>Красные диоды: </span>{{ product.redDiode }}</p>
+          <p *ngIf="product.waveLengthFRD"><span>Длинна волны: </span>{{ product.waveLengthFRD }}</p>
+          <p *ngIf="product.quantityFRD"><span>Количество Far Red светодиодов: </span>{{ product.quantityFRD }}</p>
+          <p *ngIf="product.uvaDiode"><span>Светодиоды UV-A: </span>{{ product.uvaDiode }}</p>
+          <p *ngIf="product.waveLengthUVAD"><span>Длинна волны: </span>{{ product.waveLengthUVAD }}</p>
+          <p *ngIf="product.quantityUVAD"><span>Количество UV-A светодиодов: </span>{{ product.quantityUVAD }}</p>
+          <p *ngIf="product.warrant"><span>Гарантия: </span>{{ product.warrant }}</p>
+          <p *ngIf="product.size"><span>Габариты корпуса светильника:  </span>{{ product.size }}</p>
+          <p *ngIf="product.weight"><span>Вес: </span>{{ product.weight }}</p>
+          <p *ngIf="product.peculiarities || product.peculiaritiesTwo">
+            <span>Особенности: </span>{{ product.peculiarities }} + {{ product.peculiaritiesTwo }}
+            + {{ product.peculiaritiesThree }}</p>
+          <p *ngIf="product.suspensions"><span>Подвесы: </span>{{ product.suspensions }}</p>
+          <p *ngIf="product.manufacturer"><span>Производитель: </span>{{ product.manufacturer }}</p>
+          <p *ngIf="product.halfSeed"><span>Пол семян: </span>{{ product.halfSeed }}</p>
+          <p *ngIf="product.floweringType"><span>Тип цветения: </span>{{ product.floweringType }}</p>
+          <p *ngIf="product.genetics"><span>Генетика: </span>{{ product.genetics }}</p>
+          <p *ngIf="product.speciesComposition"><span>Видовой состав: </span>{{ product.speciesComposition }}</p>
+          <p *ngIf="product.thc"><span>ТГК: </span>{{ product.thc }}</p>
+          <p *ngIf="product.cbd"><span>КБД </span>{{ product.cbd }}</p>
+          <p *ngIf="product.floweringPeriod"><span>Период цветения: </span>{{ product.floweringPeriod }}</p>
+          <p *ngIf="product.plantHeight"><span>Высота растения: </span>{{ product.plantHeight }}</p>
+          <p *ngIf="product.harvest"><span>Урожай: </span>{{ product.harvest }}</p>
+          <p *ngIf="product.growingMedium"><span>Среда выращивания: </span>{{ product.growingMedium }}</p>
+        </div>
+      </div>
+
+      <div class="about-product__reviews-block">
+        <h3 (click)="closeWindowRw()" class="about-product__reviews-block___title">Отзывы</h3><span
+        (click)="closeWindowRw()"><img
+        src="/assets/photo/down-arrow.png"
+        alt="Down Arrow"></span>
+        <div *ngIf="editedRw" class="about-product__reviews-block___img-wrapper">
+          <img src="{{ product.reviews }}" alt="Отзывы отсутствуют">
+          <img src="{{ product.reviews2 }}" alt="Отзывы отсутствуют">
+          <img src="{{ product.reviews3 }}" alt="Отзывы отсутствуют">
+          <img src="{{ product.reviews4 }}" alt="Отзывы отсутствуют">
+        </div>
+
+
+      </div>
+
+      <div class="moreReviewsLink"><a target="_blank" href="https://t.me/Hemp_Tech">Больше отзывов в нашем телеграмм канале</a>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+

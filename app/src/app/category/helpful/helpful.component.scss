@@ -1,0 +1,84 @@
+.breadcrumb {
+  background-color: #000000;
+}
+
+.breadcrumb-item > a {
+  color: #FFFFFF;
+}
+
+.jumbotron {
+  color: #FFFFFF;
+  font-size: 24px;
+  background: rgb(47, 77, 2) url(././../../../assets/photo/bg-nav6.jpeg);
+  background-size: cover;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 1023px){
+  .wrapper {
+    width: 97%;
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1200px) {
+  .wrapper {
+    width: 75%;
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    justify-content: center;
+  }
+}
+@media only screen and (min-width : 1200px) and (max-width : 1529px) {
+  .wrapper {
+    width: 82%;
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    justify-content: center;
+  }
+}
+@media only screen and (min-width : 1530px) and (max-width : 1919px) {
+  .wrapper {
+    width: 82%;
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    justify-content: center;
+  }
+}
+@media only screen and (min-width : 1920px) {
+  .wrapper {
+    width: 82%;
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    justify-content: center;
+  }
+}
+
+
+
+

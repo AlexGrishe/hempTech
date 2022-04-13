@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "dabro-firebase-test"
+  },
+  "targets": {
+    "dabro-firebase-test": {
+      "hosting": {
+        "app": [
+          "dabro-firebase-test"
+        ]
+      }
+    }
+  }
+}

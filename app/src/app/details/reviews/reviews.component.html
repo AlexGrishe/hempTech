@@ -1,0 +1,9 @@
+<div class="container">
+  <h2>О нас говорят</h2>
+  <div class="wrapper">
+    <div *ngFor="let review of filteredReviews">
+      <img style="max-height: 300px; max-width: 250px;" [src]="review.img" alt="review">
+      <p>{{ review.data }}</p>
+    </div>
+  </div>
+</div>

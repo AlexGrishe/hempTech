@@ -1,0 +1,66 @@
+.lighting-block {
+  max-width: 100%;
+  font: 600 24px/32px Roboto, "Helvetica Neue", sans-serif;
+}
+
+.jumbotron {
+  color: #ffffff;
+  background: rgb(47, 77, 2) url(../../../../assets/photo/smAccs4.jpeg);
+  background-size: cover;
+  text-shadow: #1e8310 -2px 0px 16px;
+  border: 5px solid yellow;
+  font: 600 24px/32px Roboto, "Helvetica Neue", sans-serif;
+}
+
+h1 {
+  font: 600 24px/32px Roboto, "Helvetica Neue", sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.products-wrapper {
+  width: 204px;
+  height: 415px;
+  border: 2px solid yellow;
+  margin: 10px 20px;
+}
+
+.card-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40px;
+  font-size: 18px;
+  text-align: center;
+  background-color: darkred;
+}
+
+.card-link {
+  color: #FFFFFF;
+  font-size: 18px;
+}
+
+.about-category {
+  color: #FFFFFF;
+  max-height: 25px;
+  margin: 0 17px;
+  font-size: 16px;
+  min-height: 40px;
+  text-align: center;
+}
+
+.card-price {
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+

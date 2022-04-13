@@ -1,0 +1,18 @@
+<main>
+  <div class="container">
+    <div class="row row-offcanvas row-offcanvas-right">
+      <router-outlet name="sidemenuseeds"></router-outlet>
+      <div class="col-xs-12 wrapper">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a routerLink="/home">Главная</a></li>
+          <li class="breadcrumb-item active">Семена</li>
+        </ol>
+        <div class="jumbotron">
+          <h1>Категории семена</h1>
+          <p>Топовые селекционеры, екслюзивные договора, сумашедшие скидки и постоянное наличие.</p>
+        </div>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</main>
